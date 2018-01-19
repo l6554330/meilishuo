@@ -47,7 +47,7 @@ gulp.task("watch",()=>{
 //	gulp.watch(["**/*.html","!module/**/*"],["html"]);
 //	gulp.watch(["*/*.js","!module/**/*","!es6/*"],["script"]);
 //	gulp.watch(["es6/*.js","!module/**/*"],["es6"]);
-	gulp.watch(["scss/*.scss","*.html","es6/*.js"],["sass","html","es6"]);
+	gulp.watch(["scss/scss.scss","*.html","es6/*.js"],["sass","html","es6"]);
 })
 
 
@@ -79,10 +79,11 @@ gulp.task('es6',() =>{
 	            presets: ['env']
 	        }))
 	        .pipe(gulp.dest('dist/scripts/'))
+	        .pipe(connect.reload())
 });
 
 gulp.task("sass",()=>{
-	 return gulp.src('scss/*.scss')
+	 return gulp.src('scss/scss.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('dist/css'));
 })

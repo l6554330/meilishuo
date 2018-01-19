@@ -1,0 +1,28 @@
+/*
+* @Author: 周海明
+* @Date:   2018-01-18 10:29:10
+* @Last Modified by:   周海明
+* @Last Modified time: 2018-01-18 17:28:54
+*/
+@mixin scale($scaleX:1.1,$scaleY:1.1){
+    -webkit-transform: scaleX($scaleX) scaleY($scaleY);
+    -moz-transform: scaleX($scaleX) scaleY($scaleY);
+    -ms-transform: scaleX($scaleX) scaleY($scaleY);
+    -o-transform: scaleX($scaleX) scaleY($scaleY);
+    transform: scaleX($scaleX) scaleY($scaleY);
+}
+@mixin transform($transform:all 3.5s){
+	-webkit-transition: $transform linear;
+    -moz-transition:  $transform linear;
+    -o-transition:  $transform linear;
+    transition: $transform linear; 
+}
+// @translate = [-50%,0,0] ;
+@mixin translate3d($a:-50%,$b:0,$c:0){
+	-webkit-transform: translate3d($a,$b,$c);
+	-moz-transform: translate3d($a,$b,$c);
+	-ms-transform: translate3d($a,$b,$c);
+	-o-transform: translate3d($a,$b,$c);
+	transform: translate3d($a,$b,$c);
+}
+

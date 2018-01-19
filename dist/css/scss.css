@@ -3,7 +3,7 @@
 * @Author: 周海明
 * @Date:   2018-01-16 22:00:00
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-19 08:37:21
+* @Last Modified time: 2018-01-19 09:37:51
 */
 /*
 * @Author: 周海明
@@ -488,6 +488,9 @@ table {
     margin-right: auto; }
   .top_warp #beauty .pullup::after {
     content: "加载中..."; }
+
+.footer a:hover {
+  color: #f36 !important; }
 
 .footer .footer_container {
   min-width: 1200px;

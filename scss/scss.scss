@@ -2,7 +2,7 @@
 * @Author: 周海明
 * @Date:   2018-01-16 22:00:00
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-19 08:37:21
+* @Last Modified time: 2018-01-19 09:37:51
 */
 // 引入初始化
 @import "reset";
@@ -501,6 +501,9 @@
 	}
 }
 .footer{
+	a:hover{
+		color: $cl!important;
+	}
 	.footer_container{
 	    min-width: 1200px;
 	    margin-top: 15px;

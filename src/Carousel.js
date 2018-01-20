@@ -2,14 +2,13 @@
 * @Author: 周海明
 * @Date:   2018-01-18 16:32:17
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-19 09:11:03
+* @Last Modified time: 2018-01-19 19:51:13
 */
 // console.log(1)
 define(["jquery"],function ($) {
 	// console.log($)
 	function Garousel () {
 		this.init();
-		this.timer;
 	}
 	Garousel.prototype = {
 		constructor:Garousel,
@@ -18,10 +17,10 @@ define(["jquery"],function ($) {
 			$(".b_dot li").on("mouseover",$.proxy(this.spBl,this)),
 			$(".next").on("click",$.proxy(this.next,this))
 			$(".prev").on("click",$.proxy(this.prev,this))
-			// $.proxy(this.next(),this);
+			$.proxy(this.next(),this);
 			$(".banner").on("mouseover",$.proxy(this.clearInt,this))
 			$(".banner").on("mouseout",$.proxy(this.setInt,this))
-			this.timer = setInterval($.proxy(this.next(),this),4300);
+			this.timer = setInterval($.proxy(this.next,this),4500);
 		},
 		spBl:function (e) {
 			var index = $(e.target).html() - 1;
@@ -64,9 +63,9 @@ define(["jquery"],function ($) {
 			});
 			// console.log(index)
 			$($(".banner li")[index])
-				.css({
+				.animate({
 					opacity:1
-				})
+				},300)
 				.addClass('curren')
 			$($(".banner li img")[index]).css({
 				transform: ""

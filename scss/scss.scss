@@ -2,7 +2,7 @@
 * @Author: 周海明
 * @Date:   2018-01-16 22:00:00
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-19 09:37:51
+* @Last Modified time: 2018-01-20 10:47:12
 */
 // 引入初始化
 @import "reset";
@@ -10,6 +10,10 @@
 @import "color";
 // 引入混合指令
 @import "mixin";
+// 引入微信登录界面
+@import "weixin";  
+// 引入登录界面
+@import "register"; 
 
 
 // 顶部工具栏
@@ -112,10 +116,10 @@
 		    }
 		    
 	    }
-    }
+    } 
     #com_search{
 	    min-width: 1260px;
-    	background-color: $bg2;
+    	background-color: $bg2; 
     	.inne{
 		    height: 120px;
 		    position: relative;
@@ -141,7 +145,7 @@
 					    width: 56px;
 					    background-color: #f2f2f2;
 					    line-height: 24px;
-					    cursor: pointer;
+					    cursor: pointer;  
 					}
 					.active{
 					    background-color: $cl;
@@ -200,6 +204,13 @@
 		    }
     	}
     }
+    .fixed{
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    z-index: 1000;
+    }
     #global-sec-nav{
 	    height: 40px;
 	    line-height: 40px; 
@@ -224,6 +235,12 @@
 				    color: #333;
 				    margin-right: 70%;
 	    	    }
+			    &:hover{
+			    	a{
+				    	color: $cl;
+   			 			border-bottom: 2px solid $cl;
+			    	}
+			    }
 	    	    .active{
 	    	    	color: $cl;
    			 		border-bottom: 2px solid $cl;
@@ -237,7 +254,7 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 400px;
     .top_bnr{
 	    width: 100%;
     	background-color: $bg3;
@@ -245,7 +262,7 @@
 		    width: 100%;
     		z-index: 0;
 		    position: relative;
-		    height: 500px;
+		    height: 400px;
 	        width: 100%;
 			margin: 0 auto;
 			li{
@@ -257,16 +274,16 @@
 			    // display: none;
 			    overflow: hidden;
 			    width: 100% !important;
-			    height: 500px;
+			    height: 400px;
 			    background-position: center !important;
 			    background-repeat: no-repeat !important;
 			    a{
 		    	    display: block;
 				    width: 100%;
 				    height: 100%;
-				    img{
+				    img{ 
 			    	    width: 1920px;
-					    height: 500px;
+					    height: 400px;
 					    margin: 0 auto;
 					    background-position: center !important;
 					    background-repeat: no-repeat !important;
@@ -293,13 +310,14 @@
 			    position: absolute;
 			    top: 50%;
 			    margin-top: -50px;
+
     		}
     		.prev{
 			    left: 0;
     			background-position: top left;
     		}
     		.next{
-		    	right: 0;
+		    	right: 40px;
     			background-position: top right;
     		}
     	}
@@ -313,7 +331,7 @@
 		    li{
 	    	    overflow: hidden;
 			    float: left;
-			    width: 12px;
+			    width: 12px;      
 			    height: 12px;
 			    line-height: 10px;
 			    color: #b5b2a8;
@@ -366,7 +384,7 @@
 				    width: 13px;
 				    height: 13px;
 				    background: url(http://s2.mogucdn.com/mlcdn/c45406/170328_88giad0l4lcl61kg8ak02567ddhfd_32x30.png) center no-repeat;
-				    background-size: 100%; 
+				    background-size: 100%;    
 				}
 			}
 		}
@@ -375,7 +393,7 @@
 			line-height: 28px;
 			display: block;
 		    font-size: 14px;
-		    white-space: nowrap;
+		    white-space: nowrap; 
 		    overflow: hidden;
     		text-overflow: ellipsis;
 			.icon_select{
@@ -388,7 +406,7 @@
 			    background-size: contain;
 			    vertical-align: sub;
 			}
-		}
+		}  
 	}
 
 }
@@ -577,8 +595,209 @@
 	    }
 	}
 }
+#M_PC_sidebar_container{
+    width: 38px;
+    height: 100%;
+    border-left: 1px solid #ddd;
+    background-color: #F6F6F6;
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    z-index: 999;
+    .biu-options{
+	    position: absolute;
+	    top: 62px;
+	    border-top: 1px solid #ddd;
+	    .biu-download{
+    	    height: 70px;
+		    background: url(http://s17.mogucdn.com/p1/160926/idid_ifrgkmlfmmyggyztmizdambqmeyde_12x18.png) 13px 10px no-repeat;
+		    position: relative;
+		    padding-top: 41px;
+	    }
+	    .sidebar-link{
+	    	display: block;
+		    width: 10px;
+		    padding-right: 14px;
+		    padding-left: 14px;
+		    cursor: pointer;
+		    line-height: 1.2;
+		    color: #666;
+		    background: 11px 13px no-repeat;
+		    text-decoration: none;
+	        height: 70px;
+		    background: url(http://s17.mogucdn.com/p1/160926/idid_ifrgkmlfmmyggyztmizdambqmeyde_12x18.png) 13px 10px no-repeat;
+		    position: relative;
+		    padding-top: 41px;
+		    .sidebar-text-vertical{
+			    width: 40px;
+			    height: 20px;
+			    display: inline-block;
+			    margin-top: 12px;
+			    margin-left: -18px;
+			    @include rotate();
+				}
+				.sidebar-qrcode{
+					display: none;
+				    width: 140px;
+    				height: 140px;
+				    padding: 13px;
+				    border: 1px solid #ddd;
+				    background-color: #fff;
+				    position: absolute;
+				    right: 38px;
+				    top: 0;
+				    display: none;
+					img{
+				 		position: absolute;
+					    left: 0;
+					    right: 0;
+					    margin: auto;
+					    bottom: 0;
+					    top: 0; 
+					}
+				}
+				&:hover{
+				    color: #fff;
+    				background: url(http://s17.mogucdn.com/p1/160926/idid_ifqtsojugaywgyztmizdambqgyyde_12x18.png) 13px 10px no-repeat #F33866;
+					.sidebar-qrcode{
+						display: block;
+					}
+					.sidebar-qrcode::after{
+						border: solid transparent;
+					    content: '';
+					    height: 0;
+					    left: 100%;
+					    position: absolute;
+	    				width: 0;
+    				    border-width: 10px;
+					    border-left-color: #fff;
+					    top: 55px;
+					}
+					.sidebar-qrcode::before{
+				       	border: solid transparent;
+					    content: '';
+					    height: 0;
+					    left: 100%;
+					    position: absolute;
+					    width: 0;
+				        border-width: 12px;
+					    border-left-color: #ddd;
+					    top: 53px;
+					}
+				}
+	    }
+	    .sidebar-btn{
+    	    border-bottom: 1px solid #ddd;
+    		line-height: 1.2;
+	    }
+	    .biu-cart {
+	    	position: relative;
+	    	.sidebar-link{
+    		    height: 61px;
+   				background: url(http://s17.mogucdn.com/p1/160926/idid_ifqtqmdggzqwcyztmizdambqgyyde_17x13.png) 10px 9px no-repeat;
+   				.sidebar-num{
+				    background-color: #F33866;
+				    color: #fff;
+				    padding: 0 4px;
+				    border-radius: 10px;
+				    display: block;
+				    position: absolute;
+				    top: 4px;
+				    right: 2px;
+				    z-index: 1000;
+   				}
+   				&:hover{
+		    		background: url(http://s17.mogucdn.com/p1/160926/idid_ie3wmndegy4geyztmizdambqgayde_17x13.png) 10px 9px no-repeat #F33866;
+		    	}
+	    	}
 
-
+	    }
+	    .biu-service{
+	    	position: relative;
+	    	.sidebar-link{
+	    		height: 52px;
+    			background-image: url(http://s17.mogucdn.com/p1/160926/idid_ie3wim3bmqywgyztmizdambqgayde_17x15.png);
+	    		&:hover{
+	    			background-image: url(http://s17.mogucdn.com/p1/160926/idid_ifrdgyzqmiywgyztmizdambqmeyde_17x15.png);
+	    		}
+	    	}
+	    }
+	    .biu-coupon{
+	    	position: relative;
+	    	.sidebar-link{
+    		    height: 56px;
+				background-image: url(http://s17.mogucdn.com/p1/160930/idid_ifrtoyjumjtgmmbvmizdambqhayde_18x13.png);
+	    		&:hover{
+					background-image: url(http://s16.mogucdn.com/p1/160926/idid_ifrggyjxmvsweyztmizdambqmeyde_18x13.png);
+	    		}
+	    	}
+	    }
+	    .biu-mark{
+	    	position: relative;
+	    	.sidebar-link{
+    		  	height: 46px;
+			    padding-top: 41px;
+			    background-image: url(http://s16.mogucdn.com/p1/160926/idid_ifrdqyryguywgyztmizdambqmeyde_19x18.png);
+	    		&:hover{
+    			    background-image: url(http://s16.mogucdn.com/p1/160926/idid_ifqwmn3gg4ywgyztmizdambqgyyde_19x18.png);
+	    		}
+	    	}
+	    }
+	    .biu-footprint {
+	    	position: relative;
+	    	.sidebar-link{
+		  	    height: 49px;
+			    padding-top: 44px;
+			    background-image: url(http://s16.mogucdn.com/p1/160926/idid_ie4tmmrwgazggyztmizdambqgqyde_15x21.png);
+				&:hover{
+				    background-image: url(http://s17.mogucdn.com/p1/160926/idid_ifrdaolegizggyztmizdambqmeyde_15x21.png);
+				}
+	    	}
+	    }
+    }
+    .biu-go2top{
+	    position: fixed;
+	    right: 0;
+	    bottom: 0;
+	    width: 38px;
+	    height: 40px;
+	    text-align: center;
+	    border-top: 1px solid #ddd;
+	    z-index: 1000;
+	    display: none;
+	    background: url(http://s16.mogucdn.com/p1/160926/idid_ie3tizlbgeyggyztmizdambqgayde_14x7.png) 12px 16px no-repeat #F8F8F8;
+    }
+}
+// 注册
+.regist{
+	margin-left: -38px;
+	h3{
+	    font-size: 14px;
+		color: #333;
+		padding: 7px 40px;
+		height: 42px;
+		line-height: 42px;
+		border-bottom: 1px solid #ccc;
+		margin-bottom: 20px;
+		font-weight: bold;
+	}
+}
+.rg_rule{
+	position: relative;
+    margin-bottom: 15px;
+    .check{
+	    margin-top: 15px;
+    }
+}
+.rg_login{
+	a{
+	    float: right;
+		margin-right: 40px;
+		color: #666;
+		text-decoration: underline;
+	}
+}
 
 
 

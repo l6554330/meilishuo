@@ -23,6 +23,16 @@ gulp.task("html",()=>{
 			 	.pipe(connect.reload());//自动刷新;
 })
 
+gulp.task("htmls",()=>{
+	return gulp
+				//.src(["html/*.html"])
+				//.src(["html/*"])
+				//.src(["html/**/*"])
+				.src(["html/*.html"])
+			 	.pipe(gulp.dest("dist"))
+			 	.pipe(connect.reload());//自动刷新;
+})
+
 gulp.task("script",()=>{
 	return gulp
 				.src(["src/*.js","model/*.js","libs/*.js","!src/secret.js"])
@@ -43,7 +53,7 @@ gulp.task("images",()=>{
 // 				.pipe(gulp.dest("dist/scripts"))
 // })
 gulp.task("watch",()=>{
-	gulp.watch(["**/*.html","*/*.js","!module/**/*","images/*.*"],["script","html","images"])
+	gulp.watch(["**/*.html","*/*.js","!module/**/*","images/*.*","html/*.html"],["script","html","images","htmls"])
 //	gulp.watch(["**/*.html","!module/**/*"],["html"]);
 //	gulp.watch(["*/*.js","!module/**/*","!es6/*"],["script"]);
 //	gulp.watch(["es6/*.js","!module/**/*"],["es6"]);

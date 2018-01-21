@@ -8,17 +8,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * @Author: 周海明
 * @Date:   2018-01-19 10:03:57
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-19 21:36:49
+* @Last Modified time: 2018-01-20 20:41:05
 */
 define(["jquery"], function ($) {
 	// console.log(1)
 	var Hotword = function () {
 		function Hotword() {
 			_classCallCheck(this, Hotword);
-
-			this.init();
-			// console.log(1)
 		}
+		// this.init()
+		// console.log(1)
+
+		// 初始化
+
 
 		_createClass(Hotword, [{
 			key: 'init',
@@ -26,6 +28,8 @@ define(["jquery"], function ($) {
 				this.ajax();
 				// console.log(1)
 			}
+			// AJAX获取
+
 		}, {
 			key: 'ajax',
 			value: function ajax() {
@@ -40,10 +44,12 @@ define(["jquery"], function ($) {
 					$.proxy(that.load(res), that);
 				});
 			}
+			// 商品加载
+
 		}, {
 			key: 'load',
 			value: function load(res) {
-				var re = 5571;
+				// var re = 5571;
 				// console.log(res.data.(5571))   
 				var html = "";
 				$(res.data[5571].list).each(function (index, el) {
@@ -57,5 +63,5 @@ define(["jquery"], function ($) {
 		return Hotword;
 	}();
 
-	new Hotword();
+	return new Hotword();
 });

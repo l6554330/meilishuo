@@ -2,13 +2,13 @@
 * @Author: 周海明
 * @Date:   2018-01-19 20:50:59
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-20 10:25:25
+* @Last Modified time: 2018-01-20 21:04:24
 */
 define(["jquery"],function ($) {
 	class Formva{
 		constructor(){
-			this.init();
 		}
+		// 初始化
 		init(){
 			this.tip = $(".error_tip");
 			this.uip = $('#ui_input');
@@ -21,6 +21,7 @@ define(["jquery"],function ($) {
 			this.mb.on("blur",$.proxy(this.mobile,this))
 			this.list.on("click",$.proxy(this.active,this))
 		}
+		// 表单验证
 		textBlur(){
 			let val = this.uip.val();
 			// console.log($(val).length)
@@ -52,6 +53,7 @@ define(["jquery"],function ($) {
 			// 	$(this.tip).show();
 			// }
 		}
+		// 手机号验证
 		mobile(){
 			let val = this.mb.val();
 			if (val.length == 11 && val != "") {
@@ -63,6 +65,7 @@ define(["jquery"],function ($) {
 				$(this.tip).show();
 			}
 		}
+		// 密码验证
 		pass(){
 			let str = this.psw.val();
 				
@@ -73,6 +76,7 @@ define(["jquery"],function ($) {
 				$(this.tip).show();  
 			}
 		}
+		// 样式调整
 		active(e){
 			for (var i = 0; i < this.list.length; i++) {
 				this.list[i].index = i;
@@ -83,5 +87,5 @@ define(["jquery"],function ($) {
 			$($(".mod_box")[e.target.index]).show();
 		}
 	}
-	new Formva();
+	return new Formva();
 })

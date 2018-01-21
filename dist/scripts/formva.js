@@ -8,15 +8,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * @Author: 周海明
 * @Date:   2018-01-19 20:50:59
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-20 10:25:25
+* @Last Modified time: 2018-01-20 21:04:24
 */
 define(["jquery"], function ($) {
 	var Formva = function () {
 		function Formva() {
 			_classCallCheck(this, Formva);
-
-			this.init();
 		}
+		// 初始化
+
 
 		_createClass(Formva, [{
 			key: "init",
@@ -32,6 +32,8 @@ define(["jquery"], function ($) {
 				this.mb.on("blur", $.proxy(this.mobile, this));
 				this.list.on("click", $.proxy(this.active, this));
 			}
+			// 表单验证
+
 		}, {
 			key: "textBlur",
 			value: function textBlur() {
@@ -65,6 +67,8 @@ define(["jquery"], function ($) {
 				// 	$(this.tip).show();
 				// }
 			}
+			// 手机号验证
+
 		}, {
 			key: "mobile",
 			value: function mobile() {
@@ -78,6 +82,8 @@ define(["jquery"], function ($) {
 					$(this.tip).show();
 				}
 			}
+			// 密码验证
+
 		}, {
 			key: "pass",
 			value: function pass() {
@@ -90,6 +96,8 @@ define(["jquery"], function ($) {
 					$(this.tip).show();
 				}
 			}
+			// 样式调整
+
 		}, {
 			key: "active",
 			value: function active(e) {
@@ -106,5 +114,5 @@ define(["jquery"], function ($) {
 		return Formva;
 	}();
 
-	new Formva();
+	return new Formva();
 });

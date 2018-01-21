@@ -2,16 +2,19 @@
 * @Author: 周海明
 * @Date:   2018-01-18 16:32:17
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-19 19:51:13
+* @Last Modified time: 2018-01-20 21:07:13
 */
 // console.log(1)
 define(["jquery"],function ($) {
 	// console.log($)
 	function Garousel () {
-		this.init();
+		// this.init();
 	}
+	// 定义原型
 	Garousel.prototype = {
+		// 更改constructor指向
 		constructor:Garousel,
+		// 初始化
 		init:function () {
 			this.index = 0;
 			$(".b_dot li").on("mouseover",$.proxy(this.spBl,this)),
@@ -22,10 +25,12 @@ define(["jquery"],function ($) {
 			$(".banner").on("mouseout",$.proxy(this.setInt,this))
 			this.timer = setInterval($.proxy(this.next,this),4500);
 		},
+		// 圆点运动
 		spBl:function (e) {
 			var index = $(e.target).html() - 1;
 			this.animate(index);
 		},
+		// 下一张
 		next:function () {
 			if (this.index > 3) {
 				this.index = 0
@@ -35,6 +40,7 @@ define(["jquery"],function ($) {
 			// console.log(this)
 			this.animate(this.index)
 		},
+		// 上一张
 		prev:function () {
 			if (this.index <= 0) {
 				this.index = 4
@@ -44,12 +50,15 @@ define(["jquery"],function ($) {
 			
 			this.animate(this.index);
 		},
+		// 自动播放
 		setInt:function () {
 			this.timer = setInterval($.proxy(this.next,this),4300);
 		},
+		// 关闭定时器
 		clearInt:function () {
 			clearInterval(this.timer);
 		},
+		// 动画
 		animate:function (index) {
 			$(".b_dot li").each(function (index,el) {
 				$(el).removeClass('on');
@@ -103,5 +112,5 @@ define(["jquery"],function ($) {
 	// 	timer = setInterval(next,4300);
 	// })
 	// console.log(Garousel.prototype.am)
-	new Garousel();
+	return new Garousel();
 })

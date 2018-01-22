@@ -8,11 +8,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * @Author: 周海明
 * @Date:   2018-01-18 18:15:48
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-20 20:48:57
+* @Last Modified time: 2018-01-22 21:12:24
 */
-//http://mce.meilishuo.com/jsonp/get/3?callback=jQuery112403653239572857543_1516270716722&offset=0&frame=0&trace=0&limit=10&endId=0&pid=78492&page=1&_=1516270716723
 define(["jquery"], function ($) {
-	// console.log($)
 	var Ajaxset = function () {
 		// 初始化
 		function Ajaxset() {
@@ -31,14 +29,11 @@ define(["jquery"], function ($) {
 		_createClass(Ajaxset, [{
 			key: "ajaxs",
 			value: function ajaxs() {
-				// console.log($(".pullup"))
 				if (this.page > 7) {
 					$(".pullup").css({
 						display: "none"
 					});
-					// console.log(1)
 				}
-				// console.log(1)
 				var that = this;
 				$.ajax({
 					url: 'http://mce.meilishuo.com/jsonp/get/3',
@@ -57,14 +52,12 @@ define(["jquery"], function ($) {
 				.done(function (res) {
 					$.proxy(that.ajaxRes(res), that);
 				});
-				// console.log(1)
 			}
 			// 拼接数据
 
 		}, {
 			key: "ajaxRes",
 			value: function ajaxRes(res) {
-				// console.log(res)
 				var html = "";
 				$(res.data.list).each(function (index, el) {
 					html += "<div class=\"item\">\n\t\t\t\t\t\t\t<a href=\"javascript:;\" class=\"pic_box\" style = 'background-image:url(" + el.item_pc_img + ");background-size: cover'>\t\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<div class=\"info\">\n\t\t\t\t\t\t\t\t<div class=\"part\">\n\t\t\t\t\t\t\t\t\t<div class=\"price\">\n\t\t\t\t\t\t\t\t\t\t" + el.price + "\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"collect\">\n\t\t\t\t\t\t\t\t\t\t<i class=\"icon_star\"></i>\n\t\t\t\t\t\t\t\t\t\t" + el.itemLikes + "\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"title\">\n\t\t\t\t\t\t\t\t\t<i class=\"icon_select\"></i>\n\t\t\t\t\t\t\t\t\t" + el.title + "\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>";
@@ -85,17 +78,13 @@ define(["jquery"], function ($) {
 				clearTimeout(this.timer);
 				try {
 					var offset = $(".waterfall-container .item:last").offset().top;
-				} catch (e) {
-					// statements
-					// console.log(e);
-				}
+				} catch (e) {}
 				var that = this;
 				if ($(window).scrollTop() + $(window).height() > offset) {
 					this.timer = setTimeout(function () {
 						if (that.page == 8) {
 							return 0;
 						} else {
-							// console.log(1)
 							that.page++;
 							that.form++;
 							that.ajaxs();

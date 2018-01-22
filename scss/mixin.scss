@@ -2,7 +2,7 @@
 * @Author: 周海明
 * @Date:   2018-01-18 10:29:10
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-19 15:41:10
+* @Last Modified time: 2018-01-22 09:42:46
 */
 @mixin scale($scaleX:1.1,$scaleY:1.1){
     -webkit-transform: scaleX($scaleX) scaleY($scaleY);
@@ -48,4 +48,18 @@
     -khtml-opacity: $opacity;
     opacity: $opacity;  
 }
+@mixin property($property:border-color){ 
+    -webkit-transition-property: $property;
+    -moz-transition-property: $property;
+    -o-transition-property: $property;
+    transition-property: $property;  
+}
+@mixin duration($duration:.2s){ 
+    -webkit-transition-duration: $duration;
+    -moz-transition-duration: $duration;
+    -o-transition-duration: $duration;
+    transition-duration: $duration;
+} 
+
+    
       

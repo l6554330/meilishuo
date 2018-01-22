@@ -358,11 +358,8 @@
 		    					</dl>
 		    				</div>
 	                		<div class="goods-prowrap goods-sku" id="J_GoodsSku">
-	  	    					<div class="content">
+	  	    					<div class="content_sku">
 	    							<div class="pannel-title">
-	            						<span class="choose-goods-info">
-	            							选择商品信息
-	            						</span>
 	            						<b class="J_PannelClose pannel-close"></b>
 									</div>
 									<div class="box">
@@ -425,11 +422,11 @@
 	                            </div>
 							</div>        
 	                		<div class="goods-social clear">
-								<div class=" fav  item" goodsid="0" tradeitemid="1kovcl4" tid="0">
+								<div class=" fav  items" goodsid="0" tradeitemid="1kovcl4" tid="0">
 									<b></b>
 									<span class="fav-num">471</span>
 								</div>
-	        					<div class="share item">
+	        					<div class="share items">
 	          						<b></b>
 	          						分享
 	          						<div class="share-w clear" style="display: none;">
@@ -444,25 +441,25 @@
 	            				<div class="extra-services">
 	        						<div class="fl clear label">服务承诺：</div>
 				        			<ul class="fl clear list">
-				                        <li class="item">
+				                        <li class="items">
 				                        	<span class="link">
 	                							<img src="http://s3.mogucdn.com/p1/160826/idid_ie4timrzmq3tkzbzmezdambqgqyde_40x40.png" width="24" height="24">
 	                							退货补运费
 	            							</span>
 	        							</li>
-	                    				<li class="item">
+	                    				<li class="items">
 	                    					<span class="link">	
 	                							<img src="http://s3.mogucdn.com/p1/160826/idid_ie3tmyjxhfrtgzbzmezdambqgayde_40x40.png" width="24" height="24">
 	                							全国包邮
 	            							</span>
 	        							</li>
-	                    				<li class="item">
+	                    				<li class="items">
 	                    					<span class="link">
 							                    <img src="http://s3.mogucdn.com/p1/160826/idid_ifrtgojygu2dgzbzmezdambqhayde_40x40.png" width="24" height="24">
 							                    7天无理由退货
 							                </span>
 	        							</li>
-				                        <li class="item">                                                                                                  
+				                        <li class="items">                                                                                                  
 			                            	<span class="link">
 			                    				<img src="http://s3.mogucdn.com/p1/160826/idid_ifrdqobzmq3dizbzmezdambqmeyde_40x40.png" width="24" height="24">
 			                    			72小时发货
@@ -519,7 +516,8 @@
 	  					</div>
 					</div>       
 	    		</div>
-		        <div class="primary-slide">
+			</div>
+			<div class="primary-slide">
 	            	<div class="goods-recommend" id="J_ModuleLook" data-ptp="_rechot">
 	            		<p class="title">
 	            			<s></s>
@@ -531,8 +529,7 @@
 	            			</div>
 	            		</div>
 	            	</div>
-			    </div>
-			</div> 
+			    </div> 
 		</div>
 		<div class="detail-content ">
 	    	<!-- 顶部 -->
@@ -545,15 +542,15 @@
 		        	<!-- 模块标签页 -->
 		    	<div class="module-tabpanel" id="J_ModuleTabpanel">
 		            <!-- 选项栏 -->
-		            <div class="tabbar-box ui-fixed">
+		            <div class="tabbar-box">
 		                <ul class="tabbar-list clear">
-		                    <li data-panels="graphic,recommend" data-hasnav="true" class="tab-graphic">
+		                    <li class="tab-graphic selected">
 		                        <a href="javascript:;">商品详情</a>
 		                    </li>
-		                    <li data-panels="rates" data-hasnav="false" class="selected">
+		                    <li class="">
 		                        <a href="javascript:;">累计评价<em>3</em></a>
 		                    </li>
-		                    <li data-panels="recommend" data-hasnav="false">
+		                    <li>
 		                        <a href="javascript:;">本店同类商品</a>
 		                    </li>
 		                    <li class="qrcode">
@@ -568,11 +565,11 @@
 		                    </li>
 		                </ul>
 		            </div>
-		            <div class="tabbar-bg ui-fixed">
+		            <div class="tabbar-bg ui-hide">
 		                <div class="bg-right"></div>
 		                <div class="bg-left"></div>
 		            </div>
-		        	<div class="tabbar-occupying"></div>
+		        	<div class="tabbar-occupying ui-hide"></div>
 		            <!-- 选项页 -->
 		            <div class="panel-box">
 		                <!-- 图文详情 -->
@@ -587,7 +584,7 @@
 		                		</div>  
 		                	</div>
 		                	<!-- 产品参数 -->
-		                	<div class="graphic-block">  
+		                	<div class="graphic-block block_top clear">  
 		                		<!-- 图片列表 -->  
 		                		<div id="J_Graphic"> 
 		                			<div class="panel-title"> 
@@ -597,13 +594,13 @@
 		                			 
 		        				</div>   
 		        			</div>
-		                			<!-- 尺码说明 --> 
-		        			<div id="J_Graphic_尺码说明"> 
+                			<!-- 尺码说明 --> 
+		        			<div id="J_Graphic_尺码说明" class="clear"> 
 		        				<div class="panel-title"> 
 		        					<h1>尺码说明</h1> 
 		        				</div> 
 		        				<!-- 尺码说明 --> 
-		        				<div class="graphic-block"> 
+		        				<div class="graphic-block load_size"> 
 		        					<!-- 描述 -->  
 		        					<!-- 表格 -->  
 		        					<table class="size-table">   
@@ -624,7 +621,7 @@
 		                    </div>
 		                </div>
 					    <!-- 累计评价 -->
-					    <div class="module-panel module-rates" id="J_ModuleRates">
+					    <div class="module-panel module-rates ui-hide" id="J_ModuleRates">
 					        <!-- 买家评价 -->
 							<div id="J_RatesBuyer">
 					    		<div class="panel-title rates-title">
@@ -688,19 +685,6 @@
 						        </div>
 						    </div>
 						</div>
-						<!-- 成交记录 -->
-						<div id="J_RatesOrder">
-						    <div class="panel-title rates-title">
-						        <h1>
-						        	成交记录
-						        </h1>
-						    </div>
-						    <!-- 成交记录 -->
-						    <div class="rates-order">
-						        <!-- 列表 -->
-						        <div class="sale-list" id="J_RatesOrderList"></div>
-						    </div>
-						</div>
 			    	</div>
 			        <!-- 本店同类商品 -->
 			        <div class="module-panel module-recommend ui-none" id="J_ModuleRecommend">
@@ -725,7 +709,7 @@
 		        <div class="module-shop" id="J_ModuleShop" style="display: block;">
 		            <!-- 店铺信息 -->
 		            <div class="ui-box shop-info">
-		                <h3 class="ui-hd shop-hd ui-fixed">
+		                <h3 class="ui-hd shop-hd">
 		                    <div class="shop-name">
 		                    	<a class="text text-hasim" href="http://s.meilishuo.com/1172jnw8">
 		                    		美丽优选
@@ -787,39 +771,39 @@
 		                    <!-- 列表 -->
 		                    <ul class="classify-list">
 		                        <li>
-		                            <a href="http://s.meilishuo.com/1172jnw8/index/total">全部商品</a>
+		                            <a href="javascript:;">全部商品</a>
 		                        </li>
 		                        <li class="category-link">
-		                            <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20160658">新品</a>
+		                            <a href="javascript:;">新品</a>
 		                        </li>
 		                        <li class="category-link">
-		                            <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20174424">官方出品</a>
+		                            <a href="javascript:;">官方出品</a>
 		                        </li>
 		                        <li class="category-parent">
 		                            <a href="javascript:void(0);">上衣</a>
 		                            <ul class="category-subList hide" style="display:none;">
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20145526">卫衣</a>
+		                                    <a href="javascript:;">卫衣</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20160580">T恤</a>
+		                                    <a href="javascript:;">T恤</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20160582">衬衫</a>
+		                                    <a href="javascript:;">衬衫</a>
 		                                </li>
 		                            </ul>
 		                        </li>
 		                        <li class="category-link">
-		                            <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20142334">套装</a>
+		                            <a href="javascript:;">套装</a>
 		                        </li>
 		                        <li class="category-parent">
 		                            <a href="javascript:void(0);">裙子</a>
 		                            <ul class="category-subList hide" style="display:none;">
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20142329">连衣裙</a>
+		                                    <a href="javascript:;">连衣裙</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20142330">半身裙</a>
+		                                    <a href="javascript:;">半身裙</a>
 		                                </li>
 		                            </ul>
 		                        </li>
@@ -827,10 +811,10 @@
 		                            <a href="javascript:void(0);">裤子</a>
 		                            <ul class="category-subList hide" style="display:none;">
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20142332">牛仔裤</a>
+		                                    <a href="javascript:;">牛仔裤</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20142333">裤装</a>
+		                                    <a href="javascript:;">裤装</a>
 		                                </li>
 		                            </ul>
 		                        </li>
@@ -838,22 +822,22 @@
 		                            <a href="javascript:void(0);">外套</a>
 		                            <ul class="category-subList hide" style="display:none;">
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20142319">大衣</a>
+		                                    <a href="javascript:;">大衣</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20142320">棉服&amp;羽绒服</a>
+		                                    <a href="javascript:;">棉服&amp;羽绒服</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20160578">风衣</a>
+		                                    <a href="javascript:;">风衣</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20160576">夹克&amp;棒球服</a>
+		                                    <a href="javascript:;">夹克&amp;棒球服</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20160577">开衫</a>
+		                                    <a href="javascript:;">开衫</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20160682">马甲</a>
+		                                    <a href="javascript:;">马甲</a>
 		                                </li>
 		                            </ul>
 		                        </li>
@@ -861,96 +845,96 @@
 		                            <a href="javascript:void(0);">针织&amp;毛衣</a>
 		                            <ul class="category-subList hide" style="display:none;">
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20145566">针织衫</a>
+		                                    <a href="javascript:;">针织衫</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20145565">毛衣</a>
+		                                    <a href="javascript:;">毛衣</a>
 		                                </li>
 		                            </ul>
 		                        </li>
 								<li class="category-link">
-		                            <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20158510">男友</a>
+		                            <a href="javascript:;">男友</a>
 		                        </li>
 		                        <li class="category-parent">
 		                            <a href="javascript:void(0);">鞋子</a>
 		                            <ul class="category-subList hide" style="display:none;">
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20201833">凉鞋</a>
+		                                    <a href="javascript:;">凉鞋</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20201834">单鞋</a>
+		                                    <a href="javascript:;">单鞋</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20201836">拖鞋</a>
+		                                    <a href="javascript:;">拖鞋</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20202886">帆布鞋</a>
+		                                    <a href="javascript:;">帆布鞋</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20201835">运动鞋</a>
+		                                    <a href="javascript:;">运动鞋</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20160615">休闲鞋</a>
+		                                    <a href="javascript:;">休闲鞋</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20160608">靴子</a>
+		                                    <a href="javascript:;">靴子</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20160610">雪地靴</a>
+		                                    <a href="javascript:;">雪地靴</a>
 		                                </li>
 		                            </ul>
 		                        </li>
 		                        <li class="category-link">
-		                            <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20148551">包包</a>
+		                            <a href="javascript:;">包包</a>
 		                        </li>
 		                        <li class="category-link">
-		                            <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20191582">美妆</a>
+		                            <a href="javascript:;">美妆</a>
 		                        </li>
 	                            <li class="category-parent">
 		                            <a href="javascript:void(0);">配件</a>
 		                            <ul class="category-subList hide" style="display:none;">
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20153720">袜子</a>
+		                                    <a href="javascript:;">袜子</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20153721">帽子/围巾</a>
+		                                    <a href="javascript:;">帽子/围巾</a>
 		                                </li>
 		                            </ul>
 		                        </li>
 		                        <li class="category-link">
-		                            <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20182588">内衣/家居服</a>
+		                            <a href="javascript:;">内衣/家居服</a>
 		                        </li>
 		                        <li class="category-parent">
 		                            <a href="javascript:void(0);">正在流行</a>
 		                            <ul class="category-subList hide" style="display:none;">
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20194559">纱~网纱~蕾丝纱~</a>
+		                                    <a href="javascript:;">纱~网纱~蕾丝纱~</a>
 		                                </li>
 		                            </ul>
 		                        </li>
 		                        <li class="category-link">
-		                            <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20208955">配饰</a>
+		                            <a href="javascript:;">配饰</a>
 		                        </li>
 		                        <li class="category-parent">
 		                            <a href="javascript:void(0);">母婴用品</a>
 		                            <ul class="category-subList hide" style="display:none;">
 		                            	<li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209888">婴童装</a>
+		                                    <a href="javascript:;">婴童装</a>
 		                                </li>
 		                            	<li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209889">婴童鞋</a>
+		                                    <a href="javascript:;">婴童鞋</a>
 		                                </li>
 		                            	<li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209890">孕妈妈用品</a>
+		                                    <a href="javascript:;">孕妈妈用品</a>
 		                                </li>
 		                            	<li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209891">益智动漫玩具</a>
+		                                    <a href="javascript:;">益智动漫玩具</a>
 		                                </li>
 		                            	<li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209892">婴童纸巾湿巾</a>
+		                                    <a href="javascript:;">婴童纸巾湿巾</a>
 		                                </li>
 		                            	<li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209893">婴童用品</a>
+		                                    <a href="javascript:;">婴童用品</a>
 		                                </li>
 		                        	</ul>
 		                        </li>
@@ -958,34 +942,34 @@
 		                            <a href="javascript:void(0);">百货</a>
 		                            <ul class="category-subList hide" style="display:none;">
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209895">玩具模型</a>
+		                                    <a href="javascript:;">玩具模型</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209896">文具</a>
+		                                    <a href="javascript:;">文具</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209897">个人护理</a>
+		                                    <a href="javascript:;">个人护理</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209898">洗护清洁用品</a>
+		                                    <a href="javascript:;">洗护清洁用品</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209899">节庆用品</a>
+		                                    <a href="javascript:;">节庆用品</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209900">家庭清洁</a>
+		                                    <a href="javascript:;">家庭清洁</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209901">日用品</a>
+		                                    <a href="javascript:;">日用品</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209902">收纳整理</a>
+		                                    <a href="javascript:;">收纳整理</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209903">烹饪用具餐具</a>
+		                                    <a href="javascript:;">烹饪用具餐具</a>
 		                                </li>
 		                                <li>
-		                                    <a href="http://s.meilishuo.com/1172jnw8/list/index?categoryId=20209904">家居/家纺</a>
+		                                    <a href="javascript:;">家居/家纺</a>
 		                                </li>
 									</ul>
 		                        </li>
@@ -1016,7 +1000,7 @@
 		        <!-- 购物车模块 -->
 		        <div class="module-cart" id="J_ModuleCart">
 		            <div class="ui-box cart-info">
-		                <div class="ui-hd cart-hd ui-fixed">
+		                <div class="ui-hd cart-hd">
 		                    <a class="cart-name" href="javascript:;">
 		                        <span><i></i>加入购物车</span>
 		                    </a>
@@ -1029,16 +1013,16 @@
 		        <!-- 右侧子导航模块 -->
 		        <div class="module-extranav ui-none" id="J_ModuleExtranav">
 		            <!-- 主体 -->
-		            <div class="extranav-bd ui-fixed">
+		            <div class="extranav-bd">
 		            	<!-- 子导航列表 -->
 		            	<ul class="extranav-list">  
 		            		<!-- 商品描述 -->  
-		            		<li class=""> 
+		            		<li class="selected"> 
 		            			<a href="javascript:;">商品描述</a> 
 		            		</li>  
 		            		<!-- 产品参数 -->  
 		            		<!-- 模块列表 -->   
-		            		<li class="selected"> 
+		            		<li class=""> 
 		            			<a href="javascript:;">穿着效果</a> 
 		            		</li>   
 		            		<!-- 尺码说明 -->  
@@ -1054,9 +1038,10 @@
 		        </div>
 			</div>
 		</div>
-	</div>
+	</div>	
 	</div>
 	<!-- 页面主体 end -->
+
 </body>
 </html>
 <script src="scripts/require.js"></script>

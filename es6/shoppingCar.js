@@ -224,7 +224,7 @@ define(["jquery","cookie"],function ($) {
 				   					<a href="javascript:;" class="cart_hoverline clones delete" data-color="${el.color}" data-size="${el.size}" data-id="${el.id}">删除</a> 
 				   				</td> 
 				   			</tr>`
-				htmlTwo += `<li> 
+				htmlTwo += `<li class="clones_item"> 
 								<a href="javascript:;" target="_blank" style="padding: 0; float: left;"> 
 									<span class="cart-goods-img" style="background-image: url(${el.img})">
 										

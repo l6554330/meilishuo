@@ -7,7 +7,7 @@ define(["jquery"],function ($) {
 			this.J_BigImg_max = $("#J_BigImg_max");
 			this.shade = $(".shade");
 			this.smll_magnifying = $("#smll_magnifying");
-
+			this.magnifying_img = $("#magnifying_img");
 			// this.J_BigImg_max.css({
 			// 	width: $(J_BigImg_max).width() * 2,
 			// 	height: $(J_BigImg_max).height() * 2
@@ -19,7 +19,7 @@ define(["jquery"],function ($) {
 		// 鼠标移入
 		max(e){
 			this.smll_magnifying.show();
-			this.J_BigImg_max.show();
+			this.magnifying_img.show();
 			let left = e.pageX - $(e.target).offset().left - this.smll_magnifying.width() / 2;
 			let sTop = e.pageY - $(e.target).offset().top  - this.smll_magnifying.height() / 2;
 			let maxLeft = $(e.target).width()   - this.smll_magnifying.width() -3 ;
@@ -50,7 +50,7 @@ define(["jquery"],function ($) {
 		// 移出隐藏
 		hide(){
 			this.smll_magnifying.hide();
-			this.J_BigImg_max.hide();
+			this.magnifying_img.hide();
 		}
 	}
 	new Magnifying();

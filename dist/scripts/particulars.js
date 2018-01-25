@@ -10,18 +10,15 @@ define(["jquery"], function ($) {
 		function Particulars() {
 			_classCallCheck(this, Particulars);
 
-			var that = this;
-			setTimeout(function () {
-				that.init();
-			}, 300);
+			this.init();
 		}
 
 		_createClass(Particulars, [{
 			key: "init",
 			value: function init() {
-				this.item = $(".item").parent();
-				this.cart_goods_t = $(".cart_goods_t").parent();
-				this.titleLoca = $(".titleLoca");
+				this.item = $(".contents");
+				this.cart_goods_t = $("#cartOrderTable");
+				this.titleLoca = $(".cart-goods");
 
 				// 购物结算
 				// 全选
@@ -33,6 +30,9 @@ define(["jquery"], function ($) {
 
 				this.md_process_sd = $(".md_process_sd");
 
+				this.item.on("click", ".item", this.list);
+				this.cart_goods_t.on("click", ".cart_goods_t", this.listShopping);
+				this.titleLoca.on("click", ".titleLoca", this.listSmllShopping);
 				// 单选框选中
 				this.s_all_h.on("click", $.proxy(this.cheack, this));
 				this.s_shopall.on("click", $.proxy(this.cheackStore, this));
@@ -43,10 +43,10 @@ define(["jquery"], function ($) {
 				this.goodsSum = $(".goodsSum");
 
 				// 点击删除
-				this.del_cart_goods = $(".del-cart-goods");
-				this.clones = $(".clones");
-				this.clones.on("click", $.proxy(this.coles, this));
-				this.del_cart_goods.on("click", $.proxy(this.coles, this));
+				this.del_cart_goods = $(".cart-goods");
+				this.clones = $("#cartOrderTable");
+				this.clones.on("click", ".clones", this.coles);
+				this.del_cart_goods.on("click", ".del-cart-goods", this.coles);
 
 				// 清空购物车
 				this.cartRemoveChecked = $("#cartRemoveChecked");
@@ -56,11 +56,7 @@ define(["jquery"], function ($) {
 				this.cart_nobdbtm = $(".cart_nobdbtm");
 				this.J_productPay = $("#J_productPay");
 				this.payhover = $(".payhover .num");
-
-				this.item.on("click", $.proxy(this.list, this));
-				this.cart_goods_t.on("click", $.proxy(this.listShopping, this));
 				this.payBtn.on("click", $.proxy(this.sum, this));
-				this.titleLoca.on("click", $.proxy(this.listSmllShopping, this));
 			}
 		}, {
 			key: "cart",
@@ -92,28 +88,28 @@ define(["jquery"], function ($) {
 			}
 		}, {
 			key: "list",
-			value: function list(e) {
-				$.cookie("list", $(e.target).attr("data-id"));
+			value: function list() {
+				$.cookie("list", $(this).find("a").attr("data-id"));
 				location.href = "details.html";
 			}
 		}, {
 			key: "listShopping",
-			value: function listShopping(e) {
-				$.cookie("list", $(e.target).parent().attr("data-id"));
+			value: function listShopping() {
+				$.cookie("list", $(this).attr("data-id"));
 				location.href = "details.html";
 			}
 		}, {
 			key: "listSmllShopping",
-			value: function listSmllShopping(e) {
-				$.cookie("list", $(e.target).parent().attr("data-id"));
+			value: function listSmllShopping() {
+				$.cookie("list", $(this).attr("data-id"));
 				location.href = "details.html";
 			}
 		}, {
 			key: "coles",
-			value: function coles(e) {
-				var id = $(e.target).attr("data-id");
-				var color = $(e.target).attr("data-color");
-				var size = $(e.target).attr("data-size");
+			value: function coles() {
+				var id = $(this).attr("data-id");
+				var color = $(this).attr("data-color");
+				var size = $(this).attr("data-size");
 				if (!$.cookie("shopping")) {
 					return 0;
 				}

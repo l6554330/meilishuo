@@ -2,7 +2,7 @@
 * @Author: 周海明
 * @Date:   2018-01-16 22:00:00
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-25 12:15:01
+* @Last Modified time: 2018-01-25 14:30:53
 */
 // 引入初始化
 @import "reset";   
@@ -3384,12 +3384,12 @@
 	position: absolute;
 	top:80px;
 	right:-350px;
+	display: none;
 	#J_BigImg_max{
 		position: absolute;
 		left: 0;
 		top: 0;
 		@include scale(2,2)
-		display: none;
 	}
 }
 #smll_magnifying{
@@ -3398,7 +3398,8 @@
 	left:0;
 	width: 150px;
 	height: 150px;
-	background: rgba(0,0,0,0);
+	background: yellow;
+	opacity: .4;
 	box-shadow: 0 0 5px 0;
 	display: none;
 }

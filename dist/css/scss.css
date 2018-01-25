@@ -3,7 +3,7 @@
 * @Author: 周海明
 * @Date:   2018-01-16 22:00:00
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-25 12:15:01
+* @Last Modified time: 2018-01-25 14:30:53
 */
 /*
 * @Author: 周海明
@@ -3106,7 +3106,8 @@ body, button, input, select, textarea {
   overflow: hidden;
   position: absolute;
   top: 80px;
-  right: -350px; }
+  right: -350px;
+  display: none; }
   #magnifying_img #J_BigImg_max {
     position: absolute;
     left: 0;
@@ -3115,8 +3116,7 @@ body, button, input, select, textarea {
     -moz-transform: scaleX(2) scaleY(2);
     -ms-transform: scaleX(2) scaleY(2);
     -o-transform: scaleX(2) scaleY(2);
-    transform: scaleX(2) scaleY(2);
-    display: none; }
+    transform: scaleX(2) scaleY(2); }
 
 #smll_magnifying {
   position: absolute;
@@ -3124,7 +3124,8 @@ body, button, input, select, textarea {
   left: 0;
   width: 150px;
   height: 150px;
-  background: transparent;
+  background: yellow;
+  opacity: .4;
   box-shadow: 0 0 5px 0;
   display: none; }
 

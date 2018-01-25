@@ -16,7 +16,7 @@ define(["jquery"], function ($) {
 		_createClass(Particulars, [{
 			key: "init",
 			value: function init() {
-				this.item = $(".contents");
+				this.item = $(".concas");
 				this.cart_goods_t = $("#cartOrderTable");
 				this.titleLoca = $(".cart-goods");
 

@@ -5,7 +5,7 @@ define(["jquery"],function ($) {
 			this.init()
 		}
 		init(){ 
-			this.item = $(".contents");
+			this.item = $(".concas");
 			this.cart_goods_t = $("#cartOrderTable");
 			this.titleLoca = $(".cart-goods");
 
@@ -25,7 +25,7 @@ define(["jquery"],function ($) {
 			// 单选框选中
 			this.s_all_h.on("click",$.proxy(this.cheack,this))
 			this.s_shopall.on("click",$.proxy(this.cheackStore,this))
-			this.cart_thcheck.on("click",$.proxy(this.cheackOne,this))
+			this.cart_thcheck.on("click",$.proxy(this.cheackOne,this)) 
 
 			// 和
 			this.pop;

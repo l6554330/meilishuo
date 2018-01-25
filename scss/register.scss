@@ -2,7 +2,7 @@
 * @Author: 周海明
 * @Date:   2018-01-19 15:24:35
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-19 19:52:30
+* @Last Modified time: 2018-01-25 12:14:57
 */
 .pwd_text, .short_text {
     background: none!important;
@@ -83,11 +83,10 @@
 			    color: #3c3c3c;
 			}
 			.fl_mod{
-			    width: 50%;
-				border-bottom: 1px solid #ccc;
+			    width: 100%;
+				// border-bottom: 1px solid #ccc;
 				.lo_mod{
 				    display: block;
-				    width: 119px;
 				    margin: 10px auto 0;
 				}
 				.tab_on{
@@ -97,8 +96,7 @@
 				}
 				.eb_mod{
 				    display: block;
-				    width: 119px;
-				    margin: 10px 30px 0;
+			    	margin: 10px 30px 0;
 				}   
 			}
 	    }
@@ -136,10 +134,6 @@
 			    color: $bg2;
 			    background-color: $bg4;
 			
-    		}
-    		.width_180{
-    			width: 180px;    
-    			margin-left: -4px;
     		}
 	    }
 	    .lg_login{

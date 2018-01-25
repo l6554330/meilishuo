@@ -1,12 +1,5 @@
-/*
-* @Author: 周海明
-* @Date:   2018-01-16 22:03:33
-* @Last Modified by:   周海明
-* @Last Modified time: 2018-01-22 21:11:57
-*/
-//callback=jQuery112408703731435959745_1516246745898&type=mrsx&cid=mrsx&offset=0&limit=20&_=1516246745899
+
  define(["jquery"],function ($) {
- 	// console.log($)
  	class Mljx{
  		constructor(){
 
@@ -40,7 +33,7 @@
  			let that = this;
 			$(res.data.rows).each(function(index, el) {
 				that.html += `<div class="item">
-							<a href="javascript:;" class="pic_box" style = 'background-image:url(${el.image});
+							<a href="javascript:;" class="pic_box" data-id="${el.signGoodsId}" style = 'background-image:url(${el.image});
 	    background-size: cover'>
 								
 							</a>

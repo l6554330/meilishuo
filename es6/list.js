@@ -2,16 +2,17 @@
 * @Author: 周海明
 * @Date:   2018-01-20 21:07:38
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-22 23:18:49
+* @Last Modified time: 2018-01-25 09:49:57
 */
-define(["jquery"],function ($) {
+define(["jquery","cookie"],function ($) {
 	class List{
 		constructor(){
-			this.init()
+
 		}
 		// 初始化
 		init(){
 			// 获取事件源
+			this.cookie();
 			this.all = $(".all");
 			this.slideer = $(".slideer");
 			this.J_Graphic = $("#J_Graphic");
@@ -33,6 +34,7 @@ define(["jquery"],function ($) {
 			this.j_styleList = $(".J_StyleList"); 
 			// 视窗图
 			this.J_BigImg = $("#J_BigImg");
+			this.J_BigImg_max = $("#J_BigImg_max");
 			// 尺寸
 			this.J_SizeList = $(".J_SizeList");
 			// 顶部悬浮所需元素
@@ -49,7 +51,7 @@ define(["jquery"],function ($) {
 			// 距离顶部高度
 			this.module_tabpanel_col = $(".col-main");
 			this.occupying = $(".tabbar-occupying");
-			// 商品描述
+			// 商品描述 
 			this.J_Graphic_desc = $("#J_Graphic_desc");
 			// 穿着效果
 			this.graphic_block_c = $(".block_top"); 
@@ -69,6 +71,18 @@ define(["jquery"],function ($) {
 			this.J_ModuleRecommend = $("#J_ModuleRecommend");
 			// 供应商
 			this.liangzhao = $("#liangzhao");
+			// 导航页
+			this.category_parent = $(".category-parent");
+			// 标题
+			this.maoni = $("#maoni")[0];
+			// 销量
+			this.sales = $("#sales");
+			// 页数
+			this.page = 0;
+			// 加入购物车按钮
+			this.J_BuyCart = $("#J_BuyCart");
+			// 价格
+			this.J_NowPrice = $("#J_NowPrice");
 
 			// 绑定事件
 			this.all.on("mouseover",$.proxy(this.show,this));
@@ -98,6 +112,7 @@ define(["jquery"],function ($) {
 			$(window).on("scroll",$.proxy(this.scroll,this));
 			this.extranav_bd.on("click",$.proxy(this.stairs,this))
 			this.tabbar_list.on("click",$.proxy(this.xuanxian,this))
+			this.category_parent.on("click",$.proxy(this.fideIn,this))
 		} 
 		// 显示
 		show(){
@@ -162,7 +177,6 @@ define(["jquery"],function ($) {
 		}
 		//看了又看
 		load_look(res){
-			console.log(res)
 			let html = "";
 			$(res.data.list).each(function(index, el) {
 				html += `	<li> 
@@ -276,13 +290,13 @@ define(["jquery"],function ($) {
 				li.removeClass('c')
 			}
 
-			let $index = $(e.target).parent().index();
-			// 视窗图片改变
-			if ($index == 0) {
-				this.J_BigImg.attr('src',"http://s3.mogucdn.com/mlcdn/917393/171027_450718k677087f428h1aif2gbjk72_1600x2250.jpg") ;
-			}else {
-				this.J_BigImg.attr("src","http://s3.mogucdn.com/mlcdn/917393/171027_4cc85d7c3kalb5l5fk0gacgk0096d_1600x2250.jpg") ;
-			}
+			// let $index = $(e.target).parent().index();
+			// // 视窗图片改变
+			// if ($index == 0) {
+			// 	this.J_BigImg.attr('src',"http://s3.mogucdn.com/mlcdn/917393/171027_450718k677087f428h1aif2gbjk72_1600x2250.jpg") ;
+			// }else {
+			// 	this.J_BigImg.attr("src","http://s3.mogucdn.com/mlcdn/917393/171027_4cc85d7c3kalb5l5fk0gacgk0096d_1600x2250.jpg") ;
+			// }
 			// 添加class
 			$(e.target).parent().addClass('c');
 			
@@ -316,7 +330,6 @@ define(["jquery"],function ($) {
 				this.module_tabpanel.removeClass('ui-fixed');
 				this.module_shop.removeClass('ui-fixed');
 			}
-			console.log(scrollTop)
 			if (scrollTop >= this.J_Graphic_desc.offset().top - this.pops) {
 				this.extranav_bd.find("li").removeClass('selected')
 				this.extranav_bd.find("li").eq(0).addClass('selected')
@@ -388,9 +401,97 @@ define(["jquery"],function ($) {
 			if (list[0].index == 2) {
 				this.J_ModuleRates.hide();
 				this.J_ModuleGraphic.hide();
-				this.liangzhao.hide();
+				this.extranav_bd.hide();
 			}
 		}
+		fideIn(e){
+			if ($(e.target).siblings().attr("class") == "category-subList") {
+				$(e.target).siblings().slideUp();
+				$(e.target).siblings().addClass("ui-hide")
+				return 0;
+			}
+			$(e.target).siblings().slideDown()
+			$(e.target).siblings().removeClass("ui-hide")
+		}
+		cookie(){
+			var that = this
+			var timer = setInterval(function () {
+				if (that.page >= 7 ) {
+					clearInterval(timer);
+				}
+				that.page++
+				that.ajaxs();
+			},30)
+			this.ajaxJrxp();
+			
+		}
+		// 数据请求
+ 		ajaxs(){
+ 			var that = this;
+ 			$.ajax({ 
+				url: 'http://mce.meilishuo.com/jsonp/get/3', 
+				dataType: 'jsonp',
+				data: {
+					offset : 0,
+					frame : this.form ,
+					trace : 0,
+					limit : 10,
+					endId : 0,
+					pid : 78492,
+					page : that.page
+				}
+			})
+			// 数据请求成功
+			.done(function (res) {
+				$.proxy(that.ajaxRes(res),that)
+			})
+ 		}
+ 		ajaxJrxp(){
+ 			let that = this;
+ 			$.ajax({
+				url: 'http://simba-api.meilishuo.com/mlselection/top/v1/topGoodsList/h5',
+				dataType: 'jsonp',
+				data: {
+					"type" : "mrsx",
+					"cid" : "mrsx",
+					"ffset" : 0,
+					"limit" : 20
+				}
+			})
+			// 数据请求成功
+			.done(function (res) {
+				$.proxy(that.ajaxRes(res),that)
+			})
+ 		}
+ 		// 拼接数据
+ 		ajaxRes(res) { 
+ 			var that = this;
+			$(res.data.list).each(function(index, el) {
+				if ($.cookie("list") == el.item_id) {
+					$(that.J_BigImg).attr("src",el.image);  
+					$(that.J_BigImg_max).attr("src",el.image);  
+					$(that.maoni).html(el.title);
+					$(that.sales).html(el.itemLikes)
+					$(that.J_BuyCart).attr("data-id",el.item_id);
+					$(that.J_NowPrice).attr("data-price",el.discountPrice);
+					$(that.J_NowPrice).html("¥" + el.discountPrice)
+				}
+						
+			});
+			$(res.data.rows).each(function(index, el) {
+				if ($.cookie("list") == el.signGoodsId) {
+					$(that.J_BigImg).attr("src",el.image);  
+					$(that.J_BigImg_max).attr("src",el.image);  
+					$(that.maoni).html(el.title);
+					$(that.sales).html(el.itemLikes)
+					$(that.J_NowPrice).html("¥" +el.discountPrice)
+					$(that.J_BuyCart).attr("data-id",el.signGoodsId);
+					$(that.J_NowPrice).attr("data-price",el.discountPrice);
+				}
+						
+			});
+			
+		}
 	}
-	new List();
+	return new List();
 })

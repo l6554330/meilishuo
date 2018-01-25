@@ -2,7 +2,7 @@
 * @Author: 周海明
 * @Date:   2018-01-16 22:03:33
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-20 11:56:23
+* @Last Modified time: 2018-01-24 20:41:19
 */
 //callback=jQuery112408703731435959745_1516246745898&type=mrsx&cid=mrsx&offset=0&limit=20&_=1516246745899
 define(["jquery"],function ($) {
@@ -44,6 +44,12 @@ define(["jquery"],function ($) {
 	})
 	$(".drop:last").on("mouseout",function () {
 		$(".down:last").hide();
+	})
+	$(".drop:eq(1)").on("mouseover",function () {
+		$(".down:eq(1)").show();
+	})
+	$(".drop:eq(1)").on("mouseout",function () {
+		$(".down:eq(1)").hide();
 	})
 	var offsetTop;
 	try {

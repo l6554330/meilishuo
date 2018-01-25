@@ -2,13 +2,12 @@
 * @Author: 周海明
 * @Date:   2018-01-18 18:15:48
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-22 21:12:24
+* @Last Modified time: 2018-01-23 17:33:27
 */
 define(["jquery"],function ($) {
  	class Ajaxset {
  		// 初始化
  		constructor(){
- 			// console.log(1)
  			this.page = 1;
  			this.form = 0;
  			this.timer = null;
@@ -46,7 +45,7 @@ define(["jquery"],function ($) {
 			var html = "";
 			$(res.data.list).each(function(index, el) {
 				html += `<div class="item">
-							<a href="javascript:;" class="pic_box" style = 'background-image:url(${el.item_pc_img});background-size: cover'>	
+							<a href="javascript:;" class="pic_box" data-id="${el.item_id}" style = 'background-image:url(${el.item_pc_img});background-size: cover'>	
 							</a>
 							<div class="info">
 								<div class="part">
@@ -64,9 +63,8 @@ define(["jquery"],function ($) {
 								</p>
 							</div>
 						</div>`;
-
+						
 			});
-			// 添加到页面
 			$(".waterfall-container").append(html);
 			$(".item").each(function(index, el) {
 				if ((index + 1)%5 == 0) {

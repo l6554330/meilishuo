@@ -8,7 +8,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 * @Author: 周海明
 * @Date:   2018-01-18 18:15:48
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-22 21:12:24
+* @Last Modified time: 2018-01-23 17:33:27
 */
 define(["jquery"], function ($) {
 	var Ajaxset = function () {
@@ -16,7 +16,6 @@ define(["jquery"], function ($) {
 		function Ajaxset() {
 			_classCallCheck(this, Ajaxset);
 
-			// console.log(1)
 			this.page = 1;
 			this.form = 0;
 			this.timer = null;
@@ -60,9 +59,8 @@ define(["jquery"], function ($) {
 			value: function ajaxRes(res) {
 				var html = "";
 				$(res.data.list).each(function (index, el) {
-					html += "<div class=\"item\">\n\t\t\t\t\t\t\t<a href=\"javascript:;\" class=\"pic_box\" style = 'background-image:url(" + el.item_pc_img + ");background-size: cover'>\t\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<div class=\"info\">\n\t\t\t\t\t\t\t\t<div class=\"part\">\n\t\t\t\t\t\t\t\t\t<div class=\"price\">\n\t\t\t\t\t\t\t\t\t\t" + el.price + "\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"collect\">\n\t\t\t\t\t\t\t\t\t\t<i class=\"icon_star\"></i>\n\t\t\t\t\t\t\t\t\t\t" + el.itemLikes + "\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"title\">\n\t\t\t\t\t\t\t\t\t<i class=\"icon_select\"></i>\n\t\t\t\t\t\t\t\t\t" + el.title + "\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>";
+					html += "<div class=\"item\">\n\t\t\t\t\t\t\t<a href=\"javascript:;\" class=\"pic_box\" data-id=\"" + el.item_id + "\" style = 'background-image:url(" + el.item_pc_img + ");background-size: cover'>\t\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t<div class=\"info\">\n\t\t\t\t\t\t\t\t<div class=\"part\">\n\t\t\t\t\t\t\t\t\t<div class=\"price\">\n\t\t\t\t\t\t\t\t\t\t" + el.price + "\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"collect\">\n\t\t\t\t\t\t\t\t\t\t<i class=\"icon_star\"></i>\n\t\t\t\t\t\t\t\t\t\t" + el.itemLikes + "\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"title\">\n\t\t\t\t\t\t\t\t\t<i class=\"icon_select\"></i>\n\t\t\t\t\t\t\t\t\t" + el.title + "\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>";
 				});
-				// 添加到页面
 				$(".waterfall-container").append(html);
 				$(".item").each(function (index, el) {
 					if ((index + 1) % 5 == 0) {

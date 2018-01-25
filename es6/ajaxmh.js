@@ -2,7 +2,7 @@
 * @Author: 周海明
 * @Date:   2018-01-20 11:13:23
 * @Last Modified by:   周海明
-* @Last Modified time: 2018-01-22 21:12:48
+* @Last Modified time: 2018-01-23 10:34:40
 */
 define(["jquery"],function ($) {
 	 class Ajaxmh{
@@ -32,7 +32,6 @@ define(["jquery"],function ($) {
 	 			// 成功时返回
 	 			success:function (res) {
  					that.content(res)
- 					// console.log(res)
  				}
 	 		})
 

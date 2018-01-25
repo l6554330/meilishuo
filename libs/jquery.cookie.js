@@ -54,7 +54,6 @@
 
 
 
-	setCookie("name","yanghuaizhi",{path:"/",expires:3});
 	//setCookie("name");
 
 	var config = $.cookie = function (key, value, options) {
